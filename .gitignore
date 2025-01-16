@@ -18,3 +18,10 @@
 /Tests/Selenium/settings.xml
 Build/Resources/Java/selenium-server-standalone*
 /"
+
+# Ignore .idea folder
+.idea/
+
+!.idea/codeStyles/
+!.idea/runConfigurations/
+!.idea/misc.xml
