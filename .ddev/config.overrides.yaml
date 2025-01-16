@@ -1,0 +1,12 @@
+# enable mutagen sync of the filesystem into the web container
+mutagen_enabled: true
+
+# enable mounting the filesystem via nfs to avoid docker io performance issues
+nfs_mount_enabled: true
+
+hooks:
+  post-start:
+  - exec: composer install
+  - exec: ./flow neos.flow:package:rescan
+  - exec: ./flow database:setcharset
+  - exec: ./flow doctrine:migrate
